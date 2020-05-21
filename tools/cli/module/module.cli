@@ -1,0 +1,1 @@
+/subsystem=keycloak-server:list-add(name=providers, value=module:com.mai1015.keycloak.avatar-extension)
