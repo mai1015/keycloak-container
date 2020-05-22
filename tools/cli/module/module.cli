@@ -1,1 +1,6 @@
 /subsystem=keycloak-server:list-add(name=providers, value=module:com.mai1015.keycloak.avatar-extension)
+/subsystem=keycloak-server/spi=avatar-storage-provider:add(default-provider=avatar-storage-minio)
+/subsystem=keycloak-server/spi=avatar-storage-provider/provider=avatar-storage-minio/:add(properties={server-url=${env.AVATAR_STORAGE_MINIO_URL:http://localhost:9000}, access-key=${env.AVATAR_STORAGE_MINIO_KEY:AKIAIOSFODNN7EXAMPLE}, secret-key=${env.AVATAR_STORAGE_MINIO_SECRET:wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY}}, enabled=true)
+
+/subsystem=keycloak-server/spi=realm-restapi-extension:add
+/subsystem=keycloak-server/spi=realm-restapi-extension/provider=avatar-provider/:add(properties={default-avatar=${env.AVATAR_STORAGE_MINIO_URL:http://localhost:9000/avatar.png}}, enabled=true)

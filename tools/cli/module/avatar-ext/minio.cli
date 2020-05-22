@@ -1,0 +1,4 @@
+/subsystem=keycloak-server/spi=avatar-storage-provider/provider=avatar-storage-minio: write-attribute(name=properties.server-url, value=${env.AVATAR_STORAGE_MINIO_URL:http://localhost:9000})
+/subsystem=keycloak-server/spi=avatar-storage-provider/provider=avatar-storage-minio: write-attribute(name=properties.access-key, value=${env.AVATAR_STORAGE_MINIO_KEY:AKIAIOSFODNN7EXAMPLE})
+/subsystem=keycloak-server/spi=avatar-storage-provider/provider=avatar-storage-minio: write-attribute(name=properties.secret-key, value=${env.AVATAR_STORAGE_MINIO_SECRET:wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY})
+

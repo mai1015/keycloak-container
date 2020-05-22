@@ -1,0 +1,1 @@
+/subsystem=keycloak-server/spi=realm-restapi-extension/provider=avatar-provider: write-attribute(name=properties.default-avatar, value=${env.AVATAR_STORAGE_MINIO_URL:http://localhost:9000/avatar.png})
